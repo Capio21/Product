@@ -37,19 +37,6 @@
             border-radius: 5px;
         }
 
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
         h1 {
             text-align: center;
             margin-top: 20px;
@@ -84,33 +71,55 @@
         a:hover {
             text-decoration: underline;
         }
+
+        /* Custom styles for buttons */
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
     <form action="/save" method="post">
-        
         <label for="UPC">UPC</label>
         <input type="text" name="UPC" placeholder="" value="">
         <br>
-        
         <label for="Product_Name">Product Name</label>
         <input type="text" name="Product_Name" placeholder="" value="">
         <br>
-        
         <label for="Price">Price</label>
         <input type="text" name="Price" placeholder="" value="">
         <br>
-        
         <label for="Quantity">Quantity</label>
         <input type="text" name="Quantity" placeholder="" value="">
         <br>
-        
         <label for="Created_at">Created At</label>
         <input type="datetime-local" name="Created_at" placeholder="" value="">
         <br>
-        
-        <input type="submit"  value="save">
-        
+        <button type="submit" class="btn-primary">Save</button>
     </form>
     <h1>Product Listing</h1>
     <table border="1">
@@ -130,7 +139,8 @@
                 <td><?= $pr['Quantity'] ?></td>
                 <td><?= $pr['Created_at'] ?></td>
                 <td>
-                    <a href="/delete/<?= $pr['ID'] ?>">Delete</a>||<a href="/edit/<?= $pr['ID'] ?>">Edit</a>
+                    <a href="/delete/<?= $pr['ID'] ?>" class="btn-danger">Delete</a>
+                    <a href="/edit/<?= $pr['ID'] ?>" class="btn-primary">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>

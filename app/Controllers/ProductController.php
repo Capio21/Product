@@ -21,12 +21,19 @@ class ProductController extends BaseController
     }
     public function edit($id)
     {
-        $data= [
-        'product'=> $this->product->findAll(),
-        'pro' =>$this ->product->where('id',$id)->first(),
+        $data = [
+            'product' => $this->product->findAll(),
+            'pro' => $this->product->where('id', $id)->first(),
         ];
-        return view('products',$data);
+           if (isset($data['pro'])) {
+            return view('products', $data);
+        } else {
+            $this->product->save($data);
+            
+        }
+        return redirect()->to('/error'); 
     }
+    
 
     public function save()
     {
@@ -35,12 +42,18 @@ class ProductController extends BaseController
             'UPC' => $this->request->getVar('UPC'),
             'Product_Name' => $this->request->getVar('Product_Name'),
             'Price' => $this->request->getVar('Price'),
+
             'Quantity' => $this->request->getVar('Quantity'),
             'Created_at' => $this->request->getVar('Created_at'),
         ];
+        if(isset($POST['ID'])){
+            $this->product->where('id',$_POST['ID'])->update($data);
+        }
+        else{
+            $this->product->save($data);
+          }
 
-        // Save the data to the database using your ProductModel
-        $this->product->save($data);
+        
 
         // Redirect to the product listing page (adjust the URL as needed)
         return redirect()->to('/product');

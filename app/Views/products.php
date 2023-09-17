@@ -7,22 +7,29 @@
 </head>
 <body>
     <form action="/save" method="post">
-        <label for="UPC">UPC</label>
-        <input type="text" id="UPC" name="UPC" value="">
+        <label>UPC</label>
+        <input type="hidden" name='id'value="<?=$pro['ID'] ?>" >
+        <input type="text" name="UPC" placeholder="UPC" value="<?=$pro['UPC'] ?>">
+        <br>
         
-        <label for="Product_Name">Product Name</label>
-        <input type="text" id="Product_Name" name="Product_Name" value="">
+        <label>Product Name</label>
+        <input type="text" name="Product_Name" placeholder="Product_Name" value="<?=$pro['Product_Name']?>">
+        <br>
         
-        <label for="Price">Price</label>
-        <input type="text" id="Price" name="Price" value="">
+        <label>Price</label>
+        <input type="text" name="Price" placeholder="Price" value="<?=$pro['Price']?>">
+        <br>
         
-        <label for="Quantity">Quantity</label>
-        <input type="text" id="Quantity" name="Quantity" value="">
+        <label>Quantity</label>
+        <input type="text" name="Quantity" placeholder="Quantity" value="<?=$pro['Quantity']?>">
+        <br>
         
-        <label for="Created_at">Created At</label>
-        <input type="datetime-local" id="Created_at" name="Created_at" value="">
+        <label>Created At</label>
+        <input type="datetime-local" name="Created_at" placeholder="Created_at" value="<?=$pro['Created_at']?>">
+        <br>
         
-        <input type="submit" name="submit" value="Submit">
+        <input type="submit"  value="save">
+        
     </form>
     <h1>Product Listing</h1>
     <table border="1">
@@ -42,7 +49,7 @@
                 <td><?= $pr['Quantity'] ?></td>
                 <td><?= $pr['Created_at'] ?></td>
                 <td>
-                    <a href="/delete/<?= $pr['id'] ?>">Delete</a> || <a href="/edit/<?= $pr['id'] ?>">Edit</a>
+                    <a href="/delete/<?= $pr['ID'] ?>">Delete</a> || <a href="/edit/<?= $pr['ID'] ?>">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>

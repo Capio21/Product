@@ -19,21 +19,16 @@ class ProductController extends BaseController
         $this->product->delete($id);
         return redirect()->to('/product');
     }
-    public function edit($id)
-    {
-        $data = [
-            'product' => $this->product->findAll(),
-            'pro' => $this->product->where('id', $id)->first(),
-        ];
-           if (isset($data['pro'])) {
-            return view('products', $data);
-        } else {
-            $this->product->save($data);
-            
-        }
-        return redirect()->to('/error'); 
-    }
+   public function edit($id)
+{
+    $data = [
+        'product' => $this->product->findAll(),
+        'pro' => $this->product->where('ID', $id)->first(),
+    ];
+    return redirect()->to('/product');
     
+}
+
 
     public function save()
     {

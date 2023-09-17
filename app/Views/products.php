@@ -4,93 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Listing</title>
-    <!-- Include Bootstrap CSS from a CDN (You can also download and host it locally) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        /* Centered layout */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5; /* Optional background color */
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Card style */
-        .card {
-            width: 100%;
-            max-width: 800px;
+        form {
+            max-width: 400px;
+            margin: 0 auto;
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            background-color: white;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="card mt-5">
-        <h1 class="mb-4">Product Listing</h1>
-        <div class="center-form">
-            <form action="/save" method="post">
-                <div class="mb-3">
-                    <label for="UPC" class="form-label">UPC</label>
-                    <input type="hidden" name="id" value="<?=$pro['ID'] ?>">
-                    <input type="text" class="form-control" id="UPC" name="UPC" placeholder="UPC" value="<?=$pro['UPC'] ?>">
-                </div>
-
-                <div class="mb-3">
-                    <label for="Product_Name" class="form-label">Product Name</label>
-                    <input type="text" class="form-control" id="Product_Name" name="Product_Name" placeholder="Product_Name" value="<?=$pro['Product_Name']?>">
-                </div>
-
-                <div class="mb-3">
-                    <label for="Price" class="form-label">Price</label>
-                    <input type="text" class="form-control" id="Price" name="Price" placeholder="Price" value="<?=$pro['Price']?>">
-                </div>
-
-                <div class="mb-3">
-                    <label for="Quantity" class="form-label">Quantity</label>
-                    <input type="text" class="form-control" id="Quantity" name="Quantity" placeholder="Quantity" value="<?=$pro['Quantity']?>">
-                </div>
-
-                <div class="mb-3">
-                    <label for="Created_at" class="form-label">Created At</label>
-                    <input type="datetime-local" class="form-control" id="Created_at" name="Created_at" value="<?=$pro['Created_at']?>">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Save</button>
-            </form>
-        </div>
+    <form action="/save" method="post">
+        <label for="UPC">UPC</label>
+        <input type="text" name="UPC" placeholder="" value="">
+        <br>
         
-        <table class="table table-bordered mt-3">
-            <thead>
-                <tr>
-                    <th>UPC</th>
-                    <th>Product_Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Created_at</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($product as $pr): ?>
-                    <tr>
-                        <td><?= $pr['UPC'] ?></td>
-                        <td><?= $pr['Product_Name'] ?></td>
-                        <td><?= $pr['Price'] ?></td>
-                        <td><?= $pr['Quantity'] ?></td>
-                        <td><?= $pr['Created_at'] ?></td>
-                        <td>
-                            <a href="/delete/<?= $pr['ID'] ?>" class="btn btn-danger btn-sm">Delete</a>
-                            <a href="/edit/<?= $pr['ID'] ?>" class="btn btn-primary btn-sm">Edit</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-    
-    <!-- Include Bootstrap JS (Optional, if you need JavaScript functionality) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <label for="Product_Name">Product Name</label>
+        <input type="text" name="Product_Name" placeholder="" value="">
+        <br>
+        
+        <label for="Price">Price</label>
+        <input type="text" name="Price" placeholder="" value="">
+        <br>
+        
+        <label for="Quantity">Quantity</label>
+        <input type="text" name="Quantity" placeholder="" value="">
+        <br>
+        
+        <label for="Created_at">Created At</label>
+        <input type="datetime-local" name="Created_at" placeholder="" value="">
+        <br>
+        
+        <input type="submit"  value="save">
+        
+    </form>
+    <h1>Product Listing</h1>
+    <table border="1">
+        <tr>
+            <th>UPC</th>
+            <th>Product_Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Created_at</th>
+            <th>Action</th>
+        </tr>
+        <?php foreach($product as $pr): ?>
+            <tr>
+                <td><?= $pr['UPC'] ?></td>
+                <td><?= $pr['Product_Name'] ?></td>
+                <td><?= $pr['Price'] ?></td>
+                <td><?= $pr['Quantity'] ?></td>
+                <td><?= $pr['Created_at'] ?></td>
+                <td>
+                    <a href="/delete/<?= $pr['ID'] ?>">Delete</a>||<a href="/edit/<?= $pr['ID'] ?>">Edit</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 </html>

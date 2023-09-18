@@ -4,54 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
+    <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         body {
             background-color: #282c35; /* Dark background color */
             font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #fff; /* Text color */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Ensure full viewport height */
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent container background */
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft box shadow */
             padding: 20px;
+            margin: 10px;
+            text-align: center; /* Center text within the container */
         }
 
         .container h1 {
-            margin-bottom: 20px;
             font-size: 36px;
             font-weight: 600; /* Bolder text */
             color: #4CAF50; /* Highlight color */
-        }
-
-        .btn-primary {
-            margin-top: 20px;
-            background-color: #4CAF50; /* Button background color */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            border-radius: 8px; /* Rounded button */
-            font-weight: 600; /* Bolder button text */
-            transition: background-color 0.3s; /* Smooth hover effect */
-        }
-
-        .btn-primary:hover {
-            background-color: #45a049; /* Darker color on hover */
+            margin-bottom: 20px;
         }
 
         .list-group {
-            max-width: 400px; /* Adjust the max-width as needed */
-            margin-top: 20px;
+            max-width: 300px; /* Adjust the max-width as needed */
+            margin: 20px auto;
+        }
+
+        .btn-primary-container {
+            text-align: center; /* Center the button horizontally */
+        }
+
+        .btn-primary {
+            margin-top: 10px;
         }
 
         .list-group-item {
@@ -69,7 +64,11 @@
 <body>
     <div class="container mt-5">
         <h1>Product List</h1>
-        <a href="/products/create" class="btn btn-primary">Add New Product</a>
+        
+        <!-- Center the "Add New Product" button -->
+        <div class="btn-primary-container">
+            <a href="/products/create" class="btn btn-primary">Add New Product</a>
+        </div>
         
         <ul class="list-group">
            <?php foreach ($products as $product):?>
@@ -79,6 +78,8 @@
             <?php endforeach;?>
         </ul>
     </div>
+    
+    <!-- Add Bootstrap JS and jQuery (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

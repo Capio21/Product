@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
 
-    <!-- Add Bootstrap CSS -->
+    <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <!-- Custom CSS for black and gold background -->
+
     <style>
         body {
-            background-color: black;
-            color: gold;
+            background-color: #282c35; /* Dark background color */
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff; /* Text color */
         }
 
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        .container {
+            min-height: 100vh;
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent container background */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft box shadow */
+            padding: 20px;
         }
 
-        .custom-btn {
-            background-color: gold;
-            color: black;
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 600; /* Bolder text */
+            color: #4CAF50; /* Highlight color */
+        }
+
+        .list-group {
+            max-width: 400px; /* Adjust the max-width as needed */
+            margin-top: 20px;
         }
     </style>
 </head>

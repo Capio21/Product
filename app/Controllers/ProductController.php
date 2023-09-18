@@ -19,13 +19,7 @@ class ProductController extends BaseController
         $this->product->delete($id);
         return redirect()->to('/product');
     }
-   public function edit($id)
-{
-    $data = [
-        'product' => $this->product->findAll(),
-        'pro' => $this->product->where('ID', $id)->first(),
-    ];
-    return redirect()->to('/product');
+  
     
 }
 
@@ -37,7 +31,6 @@ class ProductController extends BaseController
             'UPC' => $this->request->getVar('UPC'),
             'Product_Name' => $this->request->getVar('Product_Name'),
             'Price' => $this->request->getVar('Price'),
-
             'Quantity' => $this->request->getVar('Quantity'),
             'Created_at' => $this->request->getVar('Created_at'),
         ];

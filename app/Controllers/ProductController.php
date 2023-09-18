@@ -20,23 +20,6 @@ class ProductController extends BaseController
         return redirect()->to('/product');
     }
 
-    public function edit($id)
-    {
-        // Fetch the product data by ID
-        $product = $this->product->find($id);
-
-        // Check if the product exists
-        if (!$product) {
-            return redirect()->to('/product')->with('error', 'Product not found');
-        }
-
-        // Load the 'edit_product' view and pass the product data to it
-        $data['product'] = $product;
-
-        // Render the 'edit_product' view
-        return view('edit_product', $data);
-    }
-
     public function save()
     {
         // Collect data from the request
@@ -69,7 +52,7 @@ class ProductController extends BaseController
     {
         // Fetch all products from the database and pass them to the view
         $data['product'] = $this->product->findAll();
-
+        
         // Load the 'products' view and pass the data to it
         return view('products', $data);
     }

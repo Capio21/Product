@@ -7,66 +7,60 @@ use App\Models\ProductModel;
 
 class ProductController extends BaseController
 {
-    private $product;
-
-    public function __construct()
+    public function index()
     {
-        $this->product = new ProductModel();
+        $productModel = new ProductModel();
+        $data ['products'] = $productModel->findAll();
+        return view('product/index', $data);
     }
-
-    public function delete($id)
+    
+    public function create()
     {
-        $this->product->delete($id);
-        return redirect()->to('/product');
+       
+        return view('product/create');
+    }
+    public function store()
+    {
+        $productModel = new ProductModel();
+        $data = [
+            'UPC' => $this->request->getPost('UPC'),
+            'Product_Name' => $this->request->getPost('Product_Name'),
+            'Price' => $this->request->getPost('Price'),
+            'Quantity' => $this->request->getPost('Quantity'),
+            'Created_at' => date('Y-m-d H:i:s'),
+            'Updated_at' => date('Y-m-d H:i:s'),
+        ];
+        $productModel -> insert($data);
+        return redirect()->to('/products');
+
     }
     public function edit($id)
     {
+        $productModel = new ProductModel();
+        $data ['product'] = $productModel->find($id);
+        return view('product/edit', $data);
+        
+    }
+
+    public function update($id)
+    {
+        $productModel = new ProductModel();
         $data = [
-            'product' => $this->product->findAll(),
-            'pro'=> $this->product->where('id', $id)->first(),
+            'UPC' => $this->request->getPost('UPC'),
+            'Product_Name' => $this->request->getPost('Product_Name'),
+            'Price' => $this->request->getPost('Price'),
+            'Quantity' => $this->request->getPost('Quantity'),
+            'Updated_at' => date('Y-m-d H:i:s'),
         ];
-        return view('ecommerce', $data);
-    }
-
-    public function save()
-    {
-        // Collect data from the request
-        $data = [
-            'UPC' => $this->request->getVar('UPC'),
-            'Product_Name' => $this->request->getVar('Product_Name'),
-            'Price' => $this->request->getVar('Price'),
-            'Quantity' => $this->request->getVar('Quantity'),
-            'Created_at' => $this->request->getVar('Created_at'),
-        ];
-
-        // Check if 'ID' is in the POST data
-        $id = $this->request->getVar('ID');
-        if (!empty($id)) {
-            $this->product->update($id, $data);
-        } else {
-            $this->product->insert($data);
-        }
-
-        // Redirect to the product listing page (adjust the URL as needed)
-        return redirect()->to('/product');
-    }
-
-    public function product($product)
-    {
-        echo $product;
-    }
-
-    public function allan()
-    {
+        $productModel -> update($id, $data);
+        return redirect()->to('/products');
         
-        $data['product'] = $this->product->findAll();
-        
-        
-        return view('ecommerce', $data);
     }
-
-    public function index()
+    public function delete($id)
     {
-        // Your default index action
+        $productModel = new ProductModel();
+        $productModel -> delete($id);
+        return redirect()->to('/products');
     }
+    
 }

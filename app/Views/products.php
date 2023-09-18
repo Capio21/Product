@@ -105,19 +105,19 @@
 <body>
     <form action="/save" method="post">
         <label for="UPC">UPC</label>
-        <input type="text" name="UPC" placeholder="" value="<?= $pro['UPC']?>">
+        <input type="text" name="UPC" placeholder="" value="">
         <br>
         <label for="Product_Name">Product Name</label>
-        <input type="text" name="Product_Name" placeholder="" value="<?= $pro['Product_Name']?>">
+        <input type="text" name="Product_Name" placeholder="" value="">
         <br>
         <label for="Price">Price</label>
-        <input type="text" name="Price" placeholder="" value="<?= $pro['Price']?>">
+        <input type="text" name="Price" placeholder="" value="">
         <br>
         <label for="Quantity">Quantity</label>
-        <input type="text" name="Quantity" placeholder="" value="<?= $pro['Quantity']?>">
+        <input type="text" name="Quantity" placeholder="" value="">
         <br>
         <label for="Created_at">Created At</label>
-        <input type="datetime-local" name="Created_at" placeholder="" value="<?= $pro['Created_at']?>">
+        <input type="datetime-local" name="Created_at" placeholder="" value="">
         <br>
         <button type="submit" class="btn-primary">Save</button>
     </form>

@@ -25,7 +25,7 @@ class ProductController extends BaseController
             'product' => $this->product->findAll(),
             'pro'=> $this->product->where('id', $id)->first(),
         ];
-        return view('product', $data);
+        return view('ecommerce', $data);
     }
 
     public function save()
@@ -58,11 +58,11 @@ class ProductController extends BaseController
 
     public function allan()
     {
-        // Fetch all products from the database and pass them to the view
+        
         $data['product'] = $this->product->findAll();
         
-        // Load the 'products' view and pass the data to it
-        return view('products', $data);
+        
+        return view('ecommerce', $data);
     }
 
     public function index()

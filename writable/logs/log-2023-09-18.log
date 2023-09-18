@@ -1,0 +1,60 @@
+CRITICAL - 2023-09-18 00:04:54 --> syntax error, unexpected token "public", expecting end of file
+in APPPATH\Controllers\ProductController.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\Product\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Product\\public\\index.php')
+CRITICAL - 2023-09-18 00:11:55 --> Invalid file: "edit_product.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_product.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('edit_product', [], true)
+ 3 APPPATH\Controllers\ProductController.php(34): view('edit_product', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1253')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Product\\public\\index.php')
+CRITICAL - 2023-09-18 00:12:48 --> Invalid file: "edit_product.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_product.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('edit_product', [], true)
+ 3 APPPATH\Controllers\ProductController.php(34): view('edit_product', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1253')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Product\\public\\index.php')
+CRITICAL - 2023-09-18 00:15:36 --> Invalid file: "edit_product.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_product.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('edit_product', [], true)
+ 3 APPPATH\Controllers\ProductController.php(37): view('edit_product', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1256')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Product\\public\\index.php')
+CRITICAL - 2023-09-18 00:17:03 --> syntax error, unexpected token "public", expecting end of file
+in APPPATH\Controllers\ProductController.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\Product\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Product\\public\\index.php')
+CRITICAL - 2023-09-18 00:20:27 --> Invalid file: "edit_product.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('edit_product.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('edit_product', [], true)
+ 3 APPPATH\Controllers\ProductController.php(37): view('edit_product', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1257')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Product\\public\\index.php')

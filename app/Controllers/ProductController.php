@@ -11,7 +11,7 @@ class ProductController extends BaseController
 
     public function __construct()
     {
-        $this->product = new \App\Models\ProductModel();
+        $this->product = new ProductModel();
     }
 
     public function delete($id)
@@ -19,10 +19,23 @@ class ProductController extends BaseController
         $this->product->delete($id);
         return redirect()->to('/product');
     }
-  
-    
-}
 
+    public function edit($id)
+    {
+        // Fetch the product data by ID
+        $product = $this->product->find($id);
+
+        // Check if the product exists
+        if (!$product) {
+            return redirect()->to('/product')->with('error', 'Product not found');
+        }
+
+        // Load the 'edit_product' view and pass the product data to it
+        $data['product'] = $product;
+
+        // Render the 'edit_product' view
+        return view('edit_product', $data);
+    }
 
     public function save()
     {
@@ -34,14 +47,14 @@ class ProductController extends BaseController
             'Quantity' => $this->request->getVar('Quantity'),
             'Created_at' => $this->request->getVar('Created_at'),
         ];
-        if(isset($POST['ID'])){
-            $this->product->where('id',$_POST['ID'])->update($data);
-        }
-        else{
-            $this->product->save($data);
-          }
 
-        
+        // Check if 'ID' is in the POST data
+        $id = $this->request->getVar('ID');
+        if (!empty($id)) {
+            $this->product->update($id, $data);
+        } else {
+            $this->product->insert($data);
+        }
 
         // Redirect to the product listing page (adjust the URL as needed)
         return redirect()->to('/product');
@@ -56,7 +69,7 @@ class ProductController extends BaseController
     {
         // Fetch all products from the database and pass them to the view
         $data['product'] = $this->product->findAll();
-        
+
         // Load the 'products' view and pass the data to it
         return view('products', $data);
     }
